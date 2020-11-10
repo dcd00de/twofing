@@ -33,3 +33,17 @@ EndSection
 ```
 ## Special install script for Argonaut M7
 An install script for the Argonaut M7 (courtesy of Mikhail Grushinskiy) can be found here: https://github.com/bareboat-necessities/my-bareboat/blob/master/twofing/rpi_twofing_install.sh
+
+# d
+/etc/udev/rules.d/70-touchscreen-egalax.rules
+KERNEL=="event*",ATTRS{name}=="wch.cn USB2IIC_CTP_CONTROL",SYMLINK+="twofingtouch",RUN+="/bin/chmod a+r /dev/twofingtouch"
+
+
+~/.config/autostart
+nano twofing.desktop
+
+[Desktop Entry]
+Type=Application
+Name=Twofing
+Exec=twofing
+StartupNotify=false
